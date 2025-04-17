@@ -33,7 +33,7 @@ function initTypingAnimation() {
         return;
     }
 
-    const words = ['Computer Science Student', 'Python Developer', 'Data Scientist', 'Web Developer'];
+    const words = ['Computer Science Student', 'Python Developer', 'Data Scientist'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
