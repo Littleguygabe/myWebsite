@@ -139,3 +139,27 @@ section {
     background-color: #5d4037;
     transform: translateX(-50%) translateY(-3px);
 }
+/* --- Updated Contact Section Styles --- */
+#contact {
+    text-align: center; /* Centers the h2 and p tags */
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center; /* Horizontally centers the icons */
+    gap: 2rem; /* Adds space between the icons */
+}
+
+.contact-links a {
+    color: var(--primary-color);
+    font-size: 2.5rem; /* Makes the icons larger */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #5d4037; /* Slightly lighter brown on hover */
+    transform: translateY(-5px); /* Adds a subtle lift effect */
+}
