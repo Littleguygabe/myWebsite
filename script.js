@@ -49,4 +49,20 @@ document.querySelector('.tour-button').addEventListener('click', function (e) {
     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
+// --- More Button Functionality ---
+document.querySelectorAll('.more-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const card = button.closest('.experience-card');
+        const hiddenContent = card.querySelector('.card-content-hidden');
+        if (hiddenContent) {
+            hiddenContent.classList.toggle('expanded');
+            if (hiddenContent.classList.contains('expanded')) {
+                button.textContent = 'Less';
+            } else {
+                button.textContent = 'More';
+            }
+        }
+    });
+});
+
 

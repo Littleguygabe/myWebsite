@@ -66,6 +66,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    align-items: start;
 }
 .project-card, .experience-card {
     background-color: #fff;
@@ -139,6 +140,34 @@ section {
     background-color: #5d4037;
     transform: translateX(-50%) translateY(-3px);
 }
+.card-content-hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card-content-hidden.expanded {
+    max-height: 1000px; /* Adjust as needed to be larger than max possible content height */
+    opacity: 1;
+}
+
+.more-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-start; /* Aligns the button to the start of the flex container */
+    transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+    background-color: #5d4037;
+}
+
 /* --- Updated Contact Section Styles --- */
 #contact {
     text-align: center; /* Centers the h2 and p tags */
