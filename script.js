@@ -52,25 +52,25 @@ document.querySelector('.tour-button').addEventListener('click', function (e) {
 
 // script.js
 
-// --- FINAL, CORRECTED Experience Card Accordion Logic ---
+// script.js
+
+// --- REWRITTEN Experience Card Accordion Logic ---
+const allMoreButtons = document.querySelectorAll('.more-button');
 const allExperienceCards = document.querySelectorAll('.experience-card');
 
-allExperienceCards.forEach(currentCard => {
-    const button = currentCard.querySelector('.more-button');
-
+allMoreButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // First, check if the card we just clicked was already expanded.
-        const isAlreadyExpanded = currentCard.classList.contains('expanded');
+        const clickedCard = button.closest('.experience-card');
+        const isAlreadyExpanded = clickedCard.classList.contains('expanded');
 
-        // Before doing anything else, close all cards.
+        // First, loop through and close all cards.
         allExperienceCards.forEach(card => {
             card.classList.remove('expanded');
         });
 
-        // Finally, if the card we clicked was NOT already open, open it.
-        // This prevents it from closing when you click it again.
+        // If the card you clicked wasn't already open, open it.
         if (!isAlreadyExpanded) {
-            currentCard.classList.add('expanded');
+            clickedCard.classList.add('expanded');
         }
     });
 });
