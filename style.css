@@ -214,11 +214,19 @@ section {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* style.css */
+
+/* Find the .experience-card h3 rule and add this new rule right after it */
+
 .experience-card h3 {
     margin-top: 0;
     color: var(--primary-color);
 }
 
+/* ADD THIS NEW RULE TO HIDE THE TEXT ON THE CARD */
+.experience-details {
+    display: none;
+}
 /* --- Modal (Center View) Styles --- */
 .modal-overlay {
     position: fixed; /* Sits on top of all other content */
