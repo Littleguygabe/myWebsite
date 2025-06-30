@@ -1,5 +1,5 @@
 // --- Text Flipper Logic ---
-const rolesToDisplay = ["Python Programmer", "Student", "Data Enthusiast", "Problem Solver"];
+const rolesToDisplay = ["Experienced Python Programmer", "Student", "Data Scientist", "AI Architect"];
 const rolesContainer = document.querySelector(".roles");
 function setupRoles() {
     rolesToDisplay.forEach(role => {
