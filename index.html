@@ -26,13 +26,40 @@
                         </div>
                 </div>
             </div>
+            <a href="#about" class="tour-button">Take a Tour</a>
         </section>
 
         <section id="about" class="scroll-reveal">
-            <h2>About Me</h2>
-            <p>
-                A passionate Python programmer with a newfound interest in web development. I love creating clean and efficient solutions to complex problems.
-            </p>
+            <section id="about" class="scroll-reveal">
+                <h2>About Me</h2>
+                <p>
+                    A passionate Python programmer with a newfound interest in web development. I love creating clean and efficient solutions to complex problems.
+                </p>
+    
+                <!-- ADD THIS NEW GRID -->
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <h3>Scouting</h3>
+                        <div class="experience-details">
+                            <p>Here you can write a detailed paragraph about your scouting experience. Mention key achievements, roles you held, and skills you learned, such as leadership, teamwork, and problem-solving. This text will only appear when the card is clicked.</p>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Volunteering</h3>
+                        <div class="experience-details">
+                            <p>Describe your volunteering work here. Talk about the organization, your responsibilities, and the impact you made. It's a great place to show your commitment to causes you care about.</p>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Hobbies</h3>
+                        <div class="experience-details">
+                            <p>Talk about your hobbies and interests outside of programming. This helps show your personality. Whether it's hiking, playing an instrument, or building models, explain what you enjoy about it.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF NEW GRID -->
+    
+            </section>
         </section>
 
         <section id="projects" class="scroll-reveal">
@@ -60,12 +87,20 @@
             <h2>Contact Me</h2>
             <p>Feel free to reach out to me via email or connect with me on LinkedIn.</p>
             <ul>
-                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile/" target="_blank">Your LinkedIn Profile</a></li>
+                <li>Email: <a href="mailto:gabriel.bridger@hotmail.com">your.email@example.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/gabriel-bridger-660bb8327/" target="_blank">Your LinkedIn Profile</a></li>
             </ul>
         </section>
     </main>
 
     <script src="script.js"></script>
-</body>
+
+    <div id="experience-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+    </body>
 </html>

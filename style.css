@@ -62,12 +62,10 @@ section {
 #hero {
     min-height: 70vh;
     display: flex;
-    /* REMOVE the line below */
-    /* align-items: center; */
     justify-content: center;
     text-align: center;
-    /* ADD this line to push content down from the top */
     padding-top: 20vh; 
+    position: relative; /* ADD THIS LINE */
 }
 
 .hero-content h1 {
@@ -172,4 +170,105 @@ section {
 
     /* Scrolls back to the start seamlessly */
     100% { top: -180px; }
+}
+
+/* --- Tour Button Styles --- */
+.tour-button {
+    position: absolute;
+    bottom: 30px; /* Adjust to control distance from bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the button perfectly */
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tour-button:hover {
+    background-color: #5d4037; /* A slightly lighter brown */
+    transform: translateX(-50%) translateY(-3px); /* Adds a subtle lift effect */
+}
+
+/* --- Experience Cards Styles --- */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem; /* Adds some space below the main paragraph */
+}
+
+.experience-card {
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: solid 3px #3e2723;
+    cursor: pointer; /* Indicates the card is clickable */
+    transition: box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.experience-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* --- Modal (Center View) Styles --- */
+.modal-overlay {
+    position: fixed; /* Sits on top of all other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1; /* Makes it visible */
+    visibility: visible;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px; /* Limits the width on large screens */
+    position: relative;
+    transform: scale(0.9); /* Starts slightly smaller */
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1); /* Scales up to full size when active */
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* This class prevents the background page from scrolling when the modal is open */
+body.modal-open {
+    overflow: hidden;
 }
