@@ -3,7 +3,6 @@
     --secondary-color: #fedaca; /* Light beige */
     --text-color: #333;
 }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
@@ -11,7 +10,6 @@ body {
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
-
 header {
     position: fixed;
     top: 0;
@@ -22,11 +20,9 @@ header {
     z-index: 100;
     transition: background-color 0.3s ease;
 }
-
 header.scrolled {
     background-color: var(--primary-color);
 }
-
 nav ul {
     list-style: none;
     margin: 0;
@@ -34,150 +30,103 @@ nav ul {
     display: flex;
     justify-content: flex-start;
 }
-
 nav li {
     margin-left: 2rem;
 }
-
 nav a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
     transition: color 0.3s ease;
 }
-
 header.scrolled nav a {
     color: var(--secondary-color);
 }
-
 main {
     padding: 2rem;
 }
-
 section {
     padding: 4rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 #hero {
     min-height: 70vh;
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-top: 20vh; 
-    position: relative; /* ADD THIS LINE */
+    padding-top: 20vh;
+    position: relative;
 }
-
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
-
-.hero-content p {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.project-grid {
+.project-grid, .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
-
-.project-card {
+.project-card, .experience-card {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     border: solid 3px #3e2723;
+    display: flex;
+    flex-direction: column;
 }
-
 .project-card:hover {
     transform: translateY(-5px);
 }
-
 #contact ul {
     list-style: none;
     padding: 0;
 }
-
 #contact li {
     margin-bottom: 1rem;
 }
-
-/* Scrolling Animations */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .scroll-reveal.visible {
     opacity: 1;
     transform: translateY(0);
-} 
-
-/* --- Text Flipper Animation Styles --- */
+}
 .role-flipper {
-    /* This "window" is unchanged */
     height: 45px;
     overflow: hidden;
     position: relative;
     margin-top: 1rem;
 }
-
 .roles {
-    /* This container will still move up and down */
     position: absolute;
     top: 0;
     left: 0;
-
-    /* The updated animation with a smooth timing function */
     animation: smooth-roll 10s ease-in-out infinite;
 }
-
 .roles span {
-    /* This style for each role is unchanged */
     display: block;
     height: 45px;
     line-height: 45px;
     font-size: 1.5rem;
     color: var(--primary-color);
-
     text-align: left;
 }
-
-/* Updated keyframes for a "pause and scroll" effect */
 @keyframes smooth-roll {
-    /* Each pair of percentages creates a pause, followed by a scroll */
-    /* On "Python Programmer" */
-    0%   { top: 0; }
-    20%  { top: 0; }
-
-    /* On "Web Developer" */
-    25%  { top: -45px; }
-    45%  { top: -45px; }
-
-    /* On "Data Enthusiast" */
-    50%  { top: -90px; }
-    70%  { top: -90px; }
-
-    /* On "Problem Solver" */
-    75%  { top: -135px; }
-    95%  { top: -135px; }
-
-    /* Scrolls back to the start seamlessly */
+    0% { top: 0; } 20% { top: 0; }
+    25% { top: -45px; } 45% { top: -45px; }
+    50% { top: -90px; } 70% { top: -90px; }
+    75% { top: -135px; } 95% { top: -135px; }
     100% { top: -180px; }
 }
-
-/* --- Tour Button Styles --- */
 .tour-button {
     position: absolute;
-    bottom: 30px; /* Adjust to control distance from bottom */
+    bottom: 30px;
     left: 50%;
-    transform: translateX(-50%); /* Centers the button perfectly */
+    transform: translateX(-50%);
     padding: 12px 24px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -186,107 +135,44 @@ section {
     border-radius: 50px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 .tour-button:hover {
-    background-color: #5d4037; /* A slightly lighter brown */
-    transform: translateX(-50%) translateY(-3px); /* Adds a subtle lift effect */
+    background-color: #5d4037;
+    transform: translateX(-50%) translateY(-3px);
 }
 
-/* --- Experience Cards Styles --- */
+/* --- NEW Experience Card Accordion Styles --- */
 .experience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem; /* Adds some space below the main paragraph */
+    margin-top: 2rem;
 }
-
-.experience-card {
-    background-color: #fff;
-    padding: 1.5rem 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: solid 3px #3e2723;
-    cursor: pointer; /* Indicates the card is clickable */
-    transition: box-shadow 0.3s ease;
-}
-
-.experience-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* style.css */
-
-/* Find the .experience-card h3 rule and add this new rule right after it */
-
 .experience-card h3 {
     margin-top: 0;
+    margin-bottom: auto; /* Pushes the button to the bottom */
     color: var(--primary-color);
 }
-
-/* ADD THIS NEW RULE TO HIDE THE TEXT ON THE CARD */
-/* style.css */
-
 .experience-details {
-    /* Visually hide the element, but keep it accessible */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+    /* Hide the details by default with a smooth transition */
+    max-height: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
 }
-/* --- Modal (Center View) Styles --- */
-.modal-overlay {
-    position: fixed; /* Sits on top of all other content */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0; /* Hidden by default */
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
-}
-
-.modal-overlay.active {
-    opacity: 1; /* Makes it visible */
-    visibility: visible;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 600px; /* Limits the width on large screens */
-    position: relative;
-    transform: scale(0.9); /* Starts slightly smaller */
-    transition: transform 0.3s ease;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1); /* Scales up to full size when active */
-}
-
-.close-button {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
+.more-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
-    font-size: 2rem;
-    color: #888;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    line-height: 1;
+    margin-top: 1rem;
+    font-weight: bold;
+    align-self: flex-start; /* Aligns button to the left */
+    transition: background-color 0.3s ease;
+}
+.more-button:hover {
+    background-color: #5d4037;
 }
 
-/* This class prevents the background page from scrolling when the modal is open */
-body.modal-open {
-    overflow: hidden;
+/* This class gets added by JS when a card is expanded */
+.experience-card.expanded .experience-details {
+    max-height: 500px; /* Animate to a height large enough for the content */
+    margin-top: 1rem; /* Add space between title and details when open */
 }
