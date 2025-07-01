@@ -1,68 +1,51 @@
-// --- Text Flipper Logic ---
-const rolesToDisplay = ["Experienced Python Programmer", "Student", "Data Scientist", "AI Architect"];
-const rolesContainer = document.querySelector(".roles");
-function setupRoles() {
-    rolesToDisplay.forEach(role => {
-        const span = document.createElement("span");
-        span.textContent = role;
-        rolesContainer.appendChild(span);
-    });
-    const firstRole = document.createElement("span");
-    firstRole.textContent = rolesToDisplay[0];
-    rolesContainer.appendChild(firstRole);
-}
-setupRoles();
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.menu a, #main-nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
 
-// --- Scroll Reveal Animation Logic ---
-const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-const elementInView = (el, dividend = 1) => {
-    const elementTop = el.getBoundingClientRect().top;
-    return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
-};
-const displayScrollElement = (element) => element.classList.add('visible');
-const hideScrollElement = (element) => element.classList.remove('visible');
-const handleScrollAnimation = () => {
-    scrollRevealElements.forEach((el) => {
-        if (elementInView(el, 1.25)) {
-            displayScrollElement(el);
-        } else {
-            hideScrollElement(el);
-        }
-    });
-};
-window.addEventListener('scroll', () => {
-    handleScrollAnimation();
-    // Header scroll animation
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-// --- Smooth Scroll for Tour Button ---
-document.querySelector('.tour-button').addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-// --- More Button Functionality ---
-document.querySelectorAll('.more-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const card = button.closest('.experience-card');
-        const hiddenContent = card.querySelector('.card-content-hidden');
-        if (hiddenContent) {
-            hiddenContent.classList.toggle('expanded');
-            if (hiddenContent.classList.contains('expanded')) {
-                button.textContent = 'Less';
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                button.textContent = 'More';
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
+        });
+    });
+
+    // Show/hide nav bar on scroll
+    const mainNav = document.getElementById('main-nav');
+    const landingPage = document.querySelector('.container');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > landingPage.offsetHeight - 50) { // Adjust 50px as needed
+            mainNav.classList.add('nav-visible');
+        } else {
+            mainNav.classList.remove('nav-visible');
         }
     });
+
+    // Scroll reveal for quote sections
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                const randomRotation = (Math.random() * 6) - 3; // -3deg to +3deg
+                entry.target.style.setProperty('--rotation', `${randomRotation}deg`);
+            } else {
+                // Optional: remove 'active' class when element scrolls out of view
+                // entry.target.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    scrollRevealElements.forEach(element => {
+        observer.observe(element);
+    });
 });
-
-

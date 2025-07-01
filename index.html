@@ -3,135 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Bridger - Personal Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav id="main-nav">
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="menu">
+            <div class="menu-item-static">Gabriel Bridger</div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
 
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Gabriel Bridger</h1>
-                <div class="role-flipper">
-                    <div class="roles"></div>
-                </div>
-            </div>
-            <a href="#about" class="tour-button">Take a Tour</a>
-        </section>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>A passionate Python programmer with a newfound interest in web development. I love creating clean and efficient solutions to complex problems.</p>
 
-        <section id="about" class="scroll-reveal">
-            <h2>About Me</h2>
-            <p>A passionate Python programmer with a newfound interest in web development. I love creating clean and efficient solutions to complex problems.</p>
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <h3>Education</h3>
-                    <div class="card-content-hidden">
-                        <div class="experience-details">
-                            <p>
-                                Most recently I finished my 1st year of my degree during which I took the opportunity to join as many societies as possible
-                                (such as Economics and Finance, Computer Science, Financial Technologies and Climbing to name a few). During this year I covered a wide range of topics across all of my modules from low level system architecture
-                                to <b>Natural Language Processing</b>, this allowed me to explore more aspects of computer science and hence solidify my interest in <b>Artificial Intelligence</b> and <b>Financial Algorithms</b>
-                            </p>
+        <div class="quote-section quote-section-left scroll-reveal">
+            <h3>"My Journey into Code"</h3>
+            <p>My fascination with computers began early, evolving from casual curiosity into a deep passion for programming. I started with Python, drawn to its readability and versatility, which quickly led me into the exciting world of web development. Every line of code is an opportunity to learn and create something impactful.</p>
+        </div>
 
-                            <p>
-                                Previous to university I completed my A-Levels at Burnley College where I achieved the following results:
-                                <ul>
-                                    <li>Mathematics - A</li>
-                                    <li>Computer Science - A</li>
-                                    <li>Economics - B</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                    <button class="more-button">More</button>
-                </div>
-                <div class="experience-card">
-                    <h3>Interests</h3>
-                    <div class="card-content-hidden">
-                        <div class="experience-details">
-                            <p>Aside from AI and programming I have a fairly wide range of interests but mostly centered around being active. One of my main interests is <b>Climbing</b>, this includes bouldering (so short routes with no ropes) aswell as 
-                                lead climbing (climbing with ropes and clipping the rope in as you go). With the <b>University of Nottingham</b> being an especially 'sporty' university the climbing club is well equipped for all sorts of climbing.
-                                So this varies from weekly meet-ups at the local gym to internation climbing trips (most recently <b>El Chorro</b> in Spain)
-                            </p>
-                            <p>
-                                Furthermore I have a strong passion for <b>Mountain Biking</b> whether that being riding local trails or making trips to places such as <b>Andorra</b> & <b>Morzine</b> to use the ski-uplifts that are adapted
-                                take bikes during the summer season
-                            </p>
-                            <p>
-                                My interest in <b>Mountain Biking</b> extends beyond just riding bikes and into the technical side of the sport, looking at the new prototype components being produced by elite racing teams and how they
-                                can provide marginal gains to that team when racing
-                            </p>
-                        </div>
-                    </div>
-                    <button class="more-button">More</button>
-                 </div>
-                <div class="experience-card">
-                    <h3>Scouting</h3>
-                    <div class="card-content-hidden">
-                        <div class="experience-details">
-                            <p>Currently I have been involved in the Scouting Association for over a <b>decade</b> first joining as a 'Beaver' when I was younger and now I've progressed up through the system to become a <b>Young Scout Leader</b>.
-                            Throughout my years in scouting I have been presented with some incredible opportunities such as the <b>2023 World Scout Jamboree</b></p>
+        <div class="quote-section quote-section-right scroll-reveal">
+            <h3>"Problem-Solving at Heart"</h3>
+            <p>I thrive on challenges and the satisfaction of dissecting complex problems into manageable parts. Whether it's optimizing algorithms or debugging intricate systems, I approach each task with a methodical mindset, always seeking the most efficient and elegant solution.</p>
+        </div>
 
-                            <p>
-                                Through scouts I also got the opportunity to achieve my <b>Bronze, Silver & Gold DofE Award</b> which meant volunteering by helping out with the 
-                            </p>
-                        </div>
-                    </div>
-                    <button class="more-button">More</button>
-                </div>
-            </div>
-        </section>
+        <div class="quote-section quote-section-left scroll-reveal">
+            <h3>"Beyond the Screen"</h3>
+            <p>While coding is a significant part of my life, I believe in a balanced approach. I enjoy exploring new places, engaging in outdoor activities, and staying curious about the world around me. These experiences often inspire new perspectives that I bring back to my development work.</p>
+        </div>
 
-        <section id="projects" class="scroll-reveal">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>A brief description of your project. What was the problem and how did you solve it?</p>
-                </div>
-                <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>A brief description of your project. What was the problem and how did you solve it?</p>
-                </div>
-                <div class="project-card">
-                    <h3>Project 3</h3>
-                    <p>A brief description of your project. What was the problem and how did you solve it?</p>
-                </div>
-            </div>
-        </section>
+    </section>
 
-        <section id="contact" class="scroll-reveal">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me via email or connect with me on LinkedIn.</p>
-            <ul class="contact-links">
-                <li>
-                    <a href="mailto:gabriel.bridger@hotmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/gabriel-bridger-660bb8327/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/Littleguygabe" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </main>
+    <section id="projects" class="section">
+        <h2>My Projects</h2>
+        <p>This section will showcase my coding projects.</p>
+        <!-- Project cards will go here -->
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out!</p>
+        <div class="contact-icons">
+            <a href="mailto:your.email@example.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourgithub" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
