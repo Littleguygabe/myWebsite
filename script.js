@@ -29,13 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll reveal for quote sections
     const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+    const rotationAngles = [-3, -2, -1, 1, 2, 3]; // Predefined angles
+
+    // Shuffle the angles to ensure they are random but unique
+    for (let i = rotationAngles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [rotationAngles[i], rotationAngles[j]] = [rotationAngles[j], rotationAngles[i]];
+    }
+
+    scrollRevealElements.forEach((element, index) => {
+        const rotation = rotationAngles[index % rotationAngles.length];
+        element.style.setProperty('--rotation', `${rotation}deg`);
+    });
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                const randomRotation = (Math.random() * 6) - 3; // -3deg to +3deg
-                entry.target.style.setProperty('--rotation', `${randomRotation}deg`);
             } else {
                 // Optional: remove 'active' class when element scrolls out of view
                 // entry.target.classList.remove('active');
@@ -106,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 animateName();
             }, 500); // Pause at the end
         } else {
-            setTimeout(animateName, 200); // Time between letter changes
+            setTimeout(animateName, 150); // Time between letter changes
         }
     }
 
