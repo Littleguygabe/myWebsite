@@ -77,14 +77,14 @@ body {
 .menu a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
     line-height: 1.5;
     font-size: 1.5rem; /* Adjusted for better hierarchy */
     margin-top: 1rem;
 }
 
 .menu a:hover {
-    color: #FFB6C1;
+    color: #ADD8E6;
 }
 
 .menu-item-static {
@@ -140,7 +140,7 @@ body {
 }
 
 .contact-icons a:hover {
-    color: #FFB6C1;
+    color: #ADD8E6;
 }
 
 .quote-section {
@@ -153,7 +153,7 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
     --rotation: 0deg;
-    border-left: 5px solid #FFB6C1;
+    border-left: 5px solid #ADD8E6;
 }
 
 .quote-section:hover {
@@ -207,7 +207,7 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0.1em; /* Adjusted to remove gap */
+    bottom: -2px; /* Adjusted to remove gap */
     width: 100%;
     height: 4px;
     background-color: #343a40;
