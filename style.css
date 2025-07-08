@@ -41,7 +41,7 @@ body {
 }
 
 #main-nav a:hover {
-    color: #FFB6C1;
+    color: #ADD8E6;
 }
 
 #main-nav .nav-links {
@@ -207,7 +207,7 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px; /* Adjusted to remove gap */
+    bottom: 0.1em; /* Adjusted to remove gap */
     width: 100%;
     height: 4px;
     background-color: #343a40;
